@@ -6,8 +6,11 @@ function loadClient() {
   }
   // Make sure the client is loaded before calling this method.
   function execute() {
+    let address = document.getElementById("address-query").value;
+    console.log(address);
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-      "address": "8769 Sequoia Wood Ct"
+      "address": address,
+      "levels": ["locality", "administrativeArea1", "administrativeArea2"]
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
