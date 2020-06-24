@@ -11,7 +11,7 @@ window.onload = function loadClient() {
     let address = document.getElementById("address-query").value;
     console.log(address);
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-      "address": "8769 sequoia wood ct", //change back to address
+      "address": address, 
       "levels": ["locality","administrativeArea2"]
     })
         .then(function(response) {
@@ -28,7 +28,7 @@ window.onload = function loadClient() {
                 
                 let newProfile;
 
-                console.log(response.result.officials);
+                console.log(response.result);
                 //for loop that goes through results and populates profile cards
                 for(i = 0; i < response.result.offices.length; i++){
                     office = document.createElement('p');
@@ -46,6 +46,7 @@ window.onload = function loadClient() {
                     phone.textContent = response.result.officials[indice].phones[0];
                     email.textContent = response.result.officials[indice].emails[0];
 
+                    console.log(name + party + phone + email);
                    
                     newProfile.appendChild(office);
                     newProfile.appendChild(name);

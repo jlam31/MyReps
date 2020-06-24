@@ -13,19 +13,25 @@
 </head>
 <body>
 
-    <div class="container">
-    <h1 class="title">Local Officials</h1>
-    <div class="control">
-    <input class="input" type="text" placeholder="Enter full address" id="address-query">
-    </div>
-    <button onclick="execute()" class="button is-primary">Search</button>
+   <div class="container"> 
 
-    <div id="profile-section">
-        <div class="card" id="profile-card">
-            
+        <h1 class="title">Local Officials</h1>
+
+        <div class="level">
+            <input class="input" type="text" placeholder="Enter full address" id="address-query">
+            <button onclick="execute()" class="button is-primary">Search</button>
         </div>
-    </div>
-    </div>
+
+        <div class="columns">
+               <div class="column" id="profile-section">
+                    <div id="profile-card"></div>
+                </div>
+        </div>
+        
+
+        
+        
+   </div> 
 
 </body>
 </html>
