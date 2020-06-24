@@ -10,22 +10,34 @@ function loadClient() {
     let address = document.getElementById("address-query").value;
     console.log(address);
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-      "address": address,
+      "address": "8769 sequoia wood ct", //change back to address
       "levels": ["locality","administrativeArea2"]
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 var indice;
-                var officeElement = document.getElementById("office");
-                var nameElement = document.getElementById("name");
-                var profile = document.getElementById("profile-card");
-                var newProfile = profile.cloneNode(true);
-                
+                var profileSection = document.getElementById("profile-section");
+                var profileCard = document.getElementById("profile-card")
+                var office;
+                var name;
+                var newProfile;
+
+                //console.log(response.result);
+
+                //for loop that goes through results and populates profile cards
                 for(i = 0; i < response.result.offices.length; i++){
+                    var office = document.createElement('p');
+                    var name = document.createElement('p');
+                    newProfile = profileCard.cloneNode(true);
+
                     indice = response.result.offices[i].officialIndices[0];
-                    officeElement.textContent = response.result.offices[i].name
-                    nameElement.textContent = response.result.officials[indice].name; 
-                    
+                    office.textContent = response.result.offices[i].name
+                    name.textContent = response.result.officials[indice].name; 
+
+                   
+                    newProfile.appendChild(office);
+                    newProfile.appendChild(name);
+                    profileSection.append(newProfile);
                 }
 
 
