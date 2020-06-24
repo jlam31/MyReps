@@ -6,16 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="scripts/app.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
-    <input type="text" placeholder="Enter full address" id="address-query">
-    <!-- <button onclick="loadClient()">load</button> -->
-    <button onclick="execute()">execute</button>
+
+    <div class="container">
+    <h1 class="title">Local Officials</h1>
+    <div class="control">
+    <input class="input" type="text" placeholder="Enter full address" id="address-query">
+    </div>
+    <button onclick="execute()" class="button is-primary">Search</button>
 
     <div id="profile-section">
-        <div id="profile-card" style="background-color:DodgerBlue">
+        <div class="card" id="profile-card">
             
         </div>
+    </div>
     </div>
 
 </body>
