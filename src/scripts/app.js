@@ -56,6 +56,7 @@ window.onload = function loadClient() {
                     profileSection.append(newProfile);
                 }
 
+                  //test comment
 
             },
               function(err) { console.error("Execute error", err); });
