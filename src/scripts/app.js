@@ -33,9 +33,20 @@ window.onload = function loadClient() {
                     party = response.result.officials[indice].party;
                     phone = response.result.officials[indice].phones[0];
                     urls = response.result.officials[indice].urls[0];
-                    console.log(name, party, phone, urls);
+
+            
+              
+                    document.getElementById("name").innerHTML = name;
+                    document.getElementById("party").innerHTML = party;
+                    document.getElementById("phone").innerHTML = phone;
+                    document.getElementById("url").innerHTML = urls;
+
+                    var itm = document.getElementById("profile")
+                    var node = itm.cloneNode(true);
+                    var parentElement = document.getElementById("appendHere");
+                    parentElement.appendChild(node);
                 }
-               
+        
 
             },
               function(err) { console.error("Execute error", err); });
