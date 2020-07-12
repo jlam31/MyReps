@@ -19,7 +19,7 @@ window.onload = function loadClient() {
                 // Handle the results here (response.result has the parsed body).
                 let name;
                 let party;
-                let phones;
+                let phone;
                 let urls;
 
                 let indicie;
@@ -27,10 +27,13 @@ window.onload = function loadClient() {
 
                 console.log(response.result);
                 //u.s senator
-                for(i = 0; i < response.result.offices[0].officialIndices.length-1; i++){
+                for(i = 0; i < response.result.offices[0].officialIndices.length; i++){
                     indice = response.result.offices[0].officialIndices[i];
                     name = response.result.officials[indice].name;
-                    console.log(name);
+                    party = response.result.officials[indice].party;
+                    phone = response.result.officials[indice].phones[0];
+                    urls = response.result.officials[indice].urls[0];
+                    console.log(name, party, phone, urls);
                 }
                
 
