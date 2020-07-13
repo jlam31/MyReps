@@ -12,39 +12,37 @@ window.onload = function loadClient() {
     console.log(address);
     
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-      "address": address, 
+      "address": "8769 sequoia wood ct", 
       "roles": ["legislatorUpperBody", "legislatorLowerBody"]
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-                let name;
-                let party;
-                let phone;
-                let urls;
-
-                let indicie;
-                let numIndicie = response.result.offices[0].officialIndices.length;
-
+                
                 console.log(response.result);
                 //u.s senator
                 for(i = 0; i < response.result.offices[0].officialIndices.length; i++){
-                    indice = response.result.offices[0].officialIndices[i];
-                    name = response.result.officials[indice].name;
-                    party = response.result.officials[indice].party;
-                    phone = response.result.officials[indice].phones[0];
-                    urls = response.result.officials[indice].urls[0];
+                    let indice = response.result.offices[0].officialIndices[i];
+                    let name = response.result.officials[indice].name;
+                    let party = response.result.officials[indice].party;
+                    let phone = response.result.officials[indice].phones[0];
+                    let urls = response.result.officials[indice].urls[0];
 
-            
-              
+                    console.log(i+1);
+          
+                    var itm = document.getElementById("profile")
+                    var node = itm.cloneNode(true);
+
                     document.getElementById("name").innerHTML = name;
                     document.getElementById("party").innerHTML = party;
                     document.getElementById("phone").innerHTML = phone;
                     document.getElementById("url").innerHTML = urls;
 
-                    var itm = document.getElementById("profile")
-                    var node = itm.cloneNode(true);
-                    var parentElement = document.getElementById("appendHere");
-                    parentElement.appendChild(node);
+
+                    if(i>=1){
+                      var parentElement = document.getElementById("appendHere");
+                      parentElement.appendChild(node); 
+                    }
+                    
                 }
         
 
