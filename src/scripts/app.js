@@ -62,6 +62,51 @@ window.onload = function loadClient() {
                       parentElement.appendChild(node); 
                     }
                 }
+
+
+                //state senator (might not need to clone, there might just be one per district?)
+                for(i = 0; i < response.result.offices[2].officialIndices.length; i++){
+                  let indice = response.result.offices[2].officialIndices[i];
+                  let name = response.result.officials[indice].name;
+                  let party = response.result.officials[indice].party;
+                  let phone = response.result.officials[indice].phones[0];
+                  let urls = response.result.officials[indice].urls[0];
+
+                  let itm = document.getElementById("state-sen-profile")
+                  let node = itm.cloneNode(true);
+
+                  document.getElementById("state-sen-name").innerHTML = name;
+                  document.getElementById("state-sen-party").innerHTML = party;
+                  document.getElementById("state-sen-phone").innerHTML = phone;
+                  document.getElementById("state-sen-url").innerHTML = urls;
+
+                  if(i>=1){
+                    let parentElement = document.getElementById("state-sen-columns");
+                    parentElement.appendChild(node); 
+                  }
+              }
+
+              //state assembly(might not need to clone, there might just be one per district?)
+              for(i = 0; i < response.result.offices[3].officialIndices.length; i++){
+                let indice = response.result.offices[3].officialIndices[i];
+                let name = response.result.officials[indice].name;
+                let party = response.result.officials[indice].party;
+                let phone = response.result.officials[indice].phones[0];
+                let urls = response.result.officials[indice].urls[0];
+
+                let itm = document.getElementById("assem-profile")
+                let node = itm.cloneNode(true);
+
+                document.getElementById("assem-name").innerHTML = name;
+                document.getElementById("assem-party").innerHTML = party;
+                document.getElementById("assem-phone").innerHTML = phone;
+                document.getElementById("assem-url").innerHTML = urls;
+
+                if(i>=1){
+                  let parentElement = document.getElementById("assem-columns");
+                  parentElement.appendChild(node); 
+                }
+            }
         
 
             },
