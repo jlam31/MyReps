@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" class="has-background-primary">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +11,24 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
-<body>
+<body> 
 
-   <div class="container"> 
-        <h1 class="title">Local Officials</h1>
-
-        <div class="level">
-            <input class="input" type="text" placeholder="Enter full address" id="address-query">
-            <button onclick="execute()" class="button is-primary">Search</button>
+   <div class="container">
+        <h1 class="title" style="text-align: center;">Local Officials</h1>
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <div class="level">
+                    <input class="input" type="text" placeholder="Enter full address" id="address-query">
+                    <div class="column">
+                    <button onclick="execute()" class="button is-info">Search</button>
+                    </div>
+                </div>
+            </div>
         </div>
-   </div> 
+  </div>
 
    <!--Section for U.S Senators-->
-   <section class="section has-background-primary" id="us-senator">
+   <section class="section has-background-info" id="us-senator">
        <div class="container">
             <h2 class="title">U.S Senators</h2>
 
@@ -40,31 +45,34 @@
                             </div>
                         </div>
                     </div> 
-
                 </div>
-               
               </div>
-
        </div>
-
    </section>
 
-<template>
-    <div class="column" id="profile">
-                  
-        <div class="card">
-            <div class="card-content has-background-warning">
-                <div class="content">
-                    <p class="title is-3" id="name"></p>
-                    <p class="subtitle is-5" id="party"></p>
-                    <p class="subtitle is-5" id="phone"></p>
-                    <p class="subtitle is-5" id="url"></p>
-                </div>
-            </div>
-        </div> 
+   <!--Section for U.S Representatives-->
+   <section class="section has-background-info" id="us-rep">
+    <div class="container">
+         <h2 class="title">U.S Representatives</h2>
 
+         <div class="columns" id="appendHere">
+             <div class="column" id="rep-profile">
+               
+                 <div class="card">
+                     <div class="card-content has-background-warning">
+                         <div class="content">
+                             <p class="title is-3" id="rep-name"></p>
+                             <p class="subtitle is-5" id="rep-party"></p>
+                             <p class="subtitle is-5" id="rep-phone"></p>
+                             <p class="subtitle is-5" id="rep-url"></p>
+                         </div>
+                     </div>
+                 </div> 
+             </div>
+           </div>
     </div>
-</template>
+</section>
+
 
 </body>
 </html>
