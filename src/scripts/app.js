@@ -108,6 +108,7 @@ window.onload = function loadClient() {
                 }
             }
         
+            document.getElementById("section-container").removeAttribute("style");
 
             },
               function(err) { console.error("Execute error", err); });
