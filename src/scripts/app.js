@@ -12,7 +12,7 @@ window.onload = function loadClient() {
     console.log(address);
     
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-      "address": "8769 sequoia wood ct", 
+      "address": address, 
       "roles": ["legislatorUpperBody", "legislatorLowerBody"]
     })
         .then(function(response) {
@@ -27,22 +27,40 @@ window.onload = function loadClient() {
                     let phone = response.result.officials[indice].phones[0];
                     let urls = response.result.officials[indice].urls[0];
 
-                    console.log(i+1);
-          
-                    var itm = document.getElementById("profile")
-                    var node = itm.cloneNode(true);
+                    let itm = document.getElementById("sen-profile")
+                    let node = itm.cloneNode(true);
 
                     document.getElementById("name").innerHTML = name;
                     document.getElementById("party").innerHTML = party;
                     document.getElementById("phone").innerHTML = phone;
                     document.getElementById("url").innerHTML = urls;
 
-
                     if(i>=1){
-                      var parentElement = document.getElementById("appendHere");
+                      let parentElement = document.getElementById("sen-columns");
                       parentElement.appendChild(node); 
                     }
-                    
+                }
+
+                //u.s rep (might not need to clone, there might just be one per district?)
+                for(i = 0; i < response.result.offices[1].officialIndices.length; i++){
+                    let indice = response.result.offices[1].officialIndices[i];
+                    let name = response.result.officials[indice].name;
+                    let party = response.result.officials[indice].party;
+                    let phone = response.result.officials[indice].phones[0];
+                    let urls = response.result.officials[indice].urls[0];
+
+                    let itm = document.getElementById("rep-profile")
+                    let node = itm.cloneNode(true);
+
+                    document.getElementById("rep-name").innerHTML = name;
+                    document.getElementById("rep-party").innerHTML = party;
+                    document.getElementById("rep-phone").innerHTML = phone;
+                    document.getElementById("rep-url").innerHTML = urls;
+
+                    if(i>=1){
+                      let parentElement = document.getElementById("rep-columns");
+                      parentElement.appendChild(node); 
+                    }
                 }
         
 
