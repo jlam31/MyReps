@@ -34,6 +34,7 @@ window.onload = function loadClient() {
                     document.getElementById("party").innerHTML = party;
                     document.getElementById("phone").innerHTML = phone;
                     document.getElementById("url").innerHTML = urls;
+                    document.getElementById("url").setAttribute("href", encodeURIComponent(urls))
 
                     if(i>=1){
                       let parentElement = document.getElementById("sen-columns");
