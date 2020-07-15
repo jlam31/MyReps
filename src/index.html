@@ -14,36 +14,35 @@
 <body> 
 <br><br>
    <div class="container">
-        <h1 class="title is-family-monospace" style="text-align: center;">Local Officials</h1>
+        <h1 class="title is-family-monospace" style="text-align: center;">MyReps</h1>
         <h4 class="subtitle is-6" style="text-align:center;">Find officials representing your district</h4>
         <div class="columns is-centered">
             <div class="column is-half">
                 <div class="level">
                     <input class="input" type="text" placeholder="Enter full address" id="address-query">
                     <div class="column">
-                    <button onclick="execute()" class="button is-info">Search</button>
+                    <button onclick="execute()" class="button is-info is-rounded">Search</button>
                     </div>
                 </div>
             </div>
         </div>
   </div>
 
+  <!--Container for all the sections-->
   <div class="container" id="section-container" style="display: none;">
    <!--Section for U.S Senators-->
    <section class="section" id="us-senator">
        <div class="container">
             <h2 class="title">U.S Senators</h2>
-
             <div class="columns" id="sen-columns">
                 <div class="column is-one-third" id="sen-profile">
-                  
                     <div class="card">
                         <div class="card-content has-background-warning-light">
                             <div class="content">
-                                <p class="title is-3" id="name"></p>
-                                <p class="subtitle is-5" id="party"></p>
-                                <p class="subtitle is-5" id="phone"></p>
-                                <a class="subtitle is-5" id="url" href=""></a>
+                                <p class="title is-4" id="name"></p>
+                                <p class="subtitle is-6" id="party"></p>
+                                <p class="subtitle is-6" id="phone"></p>
+                                <a class="subtitle is-6" id="url"></a>
                             </div>
                         </div>
                     </div> 
@@ -56,17 +55,15 @@
    <section class="section" id="us-rep">
     <div class="container">
          <h2 class="title">U.S Representatives</h2>
-
          <div class="columns" id="rep-columns">
              <div class="column is-one-third" id="rep-profile">
-               
                  <div class="card">
                      <div class="card-content has-background-warning-light">
                          <div class="content">
-                             <p class="title is-3" id="rep-name"></p>
-                             <p class="subtitle is-5" id="rep-party"></p>
-                             <p class="subtitle is-5" id="rep-phone"></p>
-                             <a class="subtitle is-5" id="rep-url"></a>
+                             <p class="title is-4" id="rep-name"></p>
+                             <p class="subtitle is-6" id="rep-party"></p>
+                             <p class="subtitle is-6" id="rep-phone"></p>
+                             <a class="subtitle is-6" id="rep-url"></a>
                          </div>
                      </div>
                  </div> 
@@ -80,17 +77,15 @@
     <section class="section" id="us-rep">
         <div class="container">
             <h2 class="title">State Senator</h2>
-
             <div class="columns" id="state-sen-columns">
                 <div class="column is-one-third" id="state-sen-profile">
-                
                     <div class="card">
                         <div class="card-content has-background-warning-light">
                             <div class="content">
-                                <p class="title is-3" id="state-sen-name"></p>
-                                <p class="subtitle is-5" id="state-sen-party"></p>
-                                <p class="subtitle is-5" id="state-sen-phone"></p>
-                                <a class="subtitle is-5" id="state-sen-url"></a>
+                                <p class="title is-4" id="state-sen-name"></p>
+                                <p class="subtitle is-6" id="state-sen-party"></p>
+                                <p class="subtitle is-6" id="state-sen-phone"></p>
+                                <a class="subtitle is-6" id="state-sen-url"></a>
                             </div>
                         </div>
                     </div> 
@@ -103,17 +98,15 @@
     <section class="section" id="assem">
         <div class="container">
             <h2 class="title">State Assemblymember</h2>
-
             <div class="columns" id="assem-columns">
                 <div class="column is-one-third" id="assem-profile">
-                
                     <div class="card">
                         <div class="card-content has-background-warning-light">
                             <div class="content">
-                                <p class="title is-3" id="assem-name"></p>
-                                <p class="subtitle is-5" id="assem-party"></p>
-                                <p class="subtitle is-5" id="assem-phone"></p>
-                                <a class="subtitle is-5" id="assem-url"></a>
+                                <p class="title is-4" id="assem-name"></p>
+                                <p class="subtitle is-6" id="assem-party"></p>
+                                <p class="subtitle is-6" id="assem-phone"></p>
+                                <a class="subtitle is-6" id="assem-url"></a>
                             </div>
                         </div>
                     </div> 

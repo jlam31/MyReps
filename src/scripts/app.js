@@ -34,7 +34,7 @@ window.onload = function loadClient() {
                     document.getElementById("party").innerHTML = party;
                     document.getElementById("phone").innerHTML = phone;
                     document.getElementById("url").innerHTML = urls;
-                    document.getElementById("url").setAttribute("href", encodeURIComponent(urls))
+                    document.getElementById("url").setAttribute("href", urls);
 
                     if(i>=1){
                       let parentElement = document.getElementById("sen-columns");
@@ -57,6 +57,7 @@ window.onload = function loadClient() {
                     document.getElementById("rep-party").innerHTML = party;
                     document.getElementById("rep-phone").innerHTML = phone;
                     document.getElementById("rep-url").innerHTML = urls;
+                    document.getElementById("rep-url").setAttribute("href", urls);
 
                     if(i>=1){
                       let parentElement = document.getElementById("rep-columns");
@@ -80,6 +81,7 @@ window.onload = function loadClient() {
                   document.getElementById("state-sen-party").innerHTML = party;
                   document.getElementById("state-sen-phone").innerHTML = phone;
                   document.getElementById("state-sen-url").innerHTML = urls;
+                  document.getElementById("state-sen-url").setAttribute("href", urls);
 
                   if(i>=1){
                     let parentElement = document.getElementById("state-sen-columns");
@@ -94,6 +96,7 @@ window.onload = function loadClient() {
                 let party = response.result.officials[indice].party;
                 let phone = response.result.officials[indice].phones[0];
                 let urls = response.result.officials[indice].urls[0];
+          
 
                 let itm = document.getElementById("assem-profile")
                 let node = itm.cloneNode(true);
@@ -102,6 +105,7 @@ window.onload = function loadClient() {
                 document.getElementById("assem-party").innerHTML = party;
                 document.getElementById("assem-phone").innerHTML = phone;
                 document.getElementById("assem-url").innerHTML = urls;
+                document.getElementById("assem-url").setAttribute("href", urls);
 
                 if(i>=1){
                   let parentElement = document.getElementById("assem-columns");
