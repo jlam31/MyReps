@@ -1,6 +1,6 @@
 
 window.onload = function loadClient() {
-    gapi.client.setApiKey("AIzaSyA9mm7CiwN2pUAWR6DdgqDvbl33k40_xRg");
+    gapi.client.setApiKey(API_KEY);
     return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/civicinfo/v2/rest")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
